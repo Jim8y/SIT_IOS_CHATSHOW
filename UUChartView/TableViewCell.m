@@ -9,7 +9,6 @@
 #import "TableViewCell.h"
 #import "UUChart.h"
 #include "JSONKit.h"
-//#import "ASIHTTPRequest.h"
 
 
 @interface TableViewCell ()<UUChartDataSource>
@@ -23,7 +22,6 @@
     
     NSMutableArray * TimeToShow;
     NSMutableArray * ValueToShow;
-   // AFHTTPRequestOperation *operation;
 }
 @end
 
@@ -136,14 +134,14 @@
     
     
     ////////
-    __block NSString *jsondata;  //添加block属性使其可以在block中被改变值
+     NSString *jsondata;
     
     TimeToShow = [NSMutableArray array];
     ValueToShow = [NSMutableArray array];
     
     NSString *basepath= @"http://api.heclouds.com/devices/145588/datapoints?datastream_id=";
     NSMutableString *urlpath = [[NSMutableString alloc] initWithString:basepath];
-    [urlpath appendString:@"TestData"];
+    [urlpath appendString:@"TestData,control,Light"];
     [urlpath appendString:@"&limit=20"];
     
     
@@ -153,21 +151,11 @@
     [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setValue:@"0jhQbhdFSdbv5GZxcHw6Hb2gaTUA" forHTTPHeaderField:@"api-key"];
-   // NSString *jsonstring=@"{\"datastreams\":[{\"id\":\"TestData\",\"datapoints\":[{\"at\":\"2015-08-29T22:00:00\",\"value\":111}]}]}";
-   // [request setHTTPBody:[jsonstring dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    NSLog(@"urlpath = %@",urlpath);
-    
-   
-    
-   // dispatch_queue_t queue =dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    //dispatch_async(queue, ^{
-    
-        //[self WebDate];
      NSURLResponse *response;
     
         NSData *returnData=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
         jsondata=[[NSString alloc]initWithData:returnData encoding:NSUTF8StringEncoding];
+    NSLog(@"!!!!!!!!!!!!!!!%@",jsondata);
 
     /*{"errno":0,
        "data":
@@ -193,25 +181,21 @@
      ]},
      
      "error":"succ"}*/
-       // });
-    NSLog(@"---------%@",jsondata);
+    
+   
     NSDictionary *jsonresult=[jsondata objectFromJSONStringWithParseOptions:JKParseOptionLooseUnicode];
     NSDictionary *jsonresults_data=[jsonresult objectForKey:@"data"];
     NSArray *jsonresult_datastreams = [jsonresults_data objectForKey:@"datastreams"];
-    //NSString * json_array=[jsonresult_datapoints objectAtIndex:0];
+    
     for (int i=0; i<jsonresult_datastreams.count; i++) {
         NSDictionary *item=[jsonresult_datastreams objectAtIndex:i];
         datapoints=[item objectForKey:@"datapoints"];//datapoint作为全局变量。
-        //NSLog(@"9999999999%@",datapoints);
         for (int j=0; j<datapoints.count; j++) {
             NSDictionary *item1=[datapoints objectAtIndex:(datapoints.count-j-1)];
             NSString *at =[item1 objectForKey:@"at"];
             NSString *value=[item1 objectForKey:@"value"];
-            //long val=[value integerValue];
-            NSLog(@"***************%@::::::%@",at,value);
             [TimeToShow addObject:at];
             [ValueToShow addObject:value];
-            NSLog(@"$$$$$$$$$$$$$%lu",(unsigned long)TimeToShow.count);
         }
     }
     

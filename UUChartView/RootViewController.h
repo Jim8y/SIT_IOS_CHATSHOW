@@ -10,4 +10,12 @@
 
 @interface RootViewController : UIViewController
 
+- (IBAction)Refresh:(id)sender;
+@property (weak, nonatomic) IBOutlet UISwitch *RedLight;
+@property (weak, nonatomic) IBOutlet UISwitch *GreenLigth;
+@property (weak, nonatomic) IBOutlet UISwitch *BlueLight;
+
+- (IBAction)redLight:(id)sender;
+//- (IBAction)greenLight:(id)sender;
+- (IBAction)blueLight:(id)sender;
 @end

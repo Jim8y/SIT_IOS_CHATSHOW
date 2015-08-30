@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2FB1D8221B91B07600B990D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FB1D8211B91B07600B990D4 /* UIKit.framework */; };
 		2FB1D8241B91B0A200B990D4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FB1D8231B91B0A200B990D4 /* CoreGraphics.framework */; };
+		2FE0007C1B93008700050C81 /* SITChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE0007A1B93008700050C81 /* SITChatController.m */; };
+		2FE0007D1B93008700050C81 /* SITChatController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FE0007B1B93008700050C81 /* SITChatController.xib */; };
 		5BD3C9231B91F65900BA7118 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD3C9221B91F65900BA7118 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B7A1894E1A58D9A200579497 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A1894D1A58D9A200579497 /* main.m */; };
 		B7A189511A58D9A200579497 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A189501A58D9A200579497 /* AppDelegate.m */; };
@@ -40,6 +42,9 @@
 /* Begin PBXFileReference section */
 		2FB1D8211B91B07600B990D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2FB1D8231B91B0A200B990D4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2FE000791B93008700050C81 /* SITChatController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SITChatController.h; path = ../SITChatController.h; sourceTree = "<group>"; };
+		2FE0007A1B93008700050C81 /* SITChatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SITChatController.m; path = ../SITChatController.m; sourceTree = "<group>"; };
+		2FE0007B1B93008700050C81 /* SITChatController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SITChatController.xib; path = ../SITChatController.xib; sourceTree = "<group>"; };
 		5BD3C9211B91F65900BA7118 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		5BD3C9221B91F65900BA7118 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		B7A189481A58D9A200579497 /* UUChartView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UUChartView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +141,9 @@
 		B7A1894A1A58D9A200579497 /* UUChartView */ = {
 			isa = PBXGroup;
 			children = (
+				2FE000791B93008700050C81 /* SITChatController.h */,
+				2FE0007A1B93008700050C81 /* SITChatController.m */,
+				2FE0007B1B93008700050C81 /* SITChatController.xib */,
 				B7A1894F1A58D9A200579497 /* AppDelegate.h */,
 				B7A189501A58D9A200579497 /* AppDelegate.m */,
 				B7A189841A58DAC600579497 /* RootViewController.h */,
@@ -277,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7A1895C1A58D9A200579497 /* LaunchScreen.xib in Resources */,
+				2FE0007D1B93008700050C81 /* SITChatController.xib in Resources */,
 				B7A1898F1A58DDBB00579497 /* TableViewCell.xib in Resources */,
 				B7A189881A58DAC600579497 /* RootViewController.xib in Resources */,
 				B7A189591A58D9A200579497 /* Images.xcassets in Resources */,
@@ -299,6 +308,7 @@
 			files = (
 				B7A1897E1A58DA8500579497 /* UUBar.m in Sources */,
 				B7A189801A58DA8500579497 /* UUChart.m in Sources */,
+				2FE0007C1B93008700050C81 /* SITChatController.m in Sources */,
 				B7A189511A58D9A200579497 /* AppDelegate.m in Sources */,
 				B7A1898E1A58DDBB00579497 /* TableViewCell.m in Sources */,
 				B7A189871A58DAC600579497 /* RootViewController.m in Sources */,

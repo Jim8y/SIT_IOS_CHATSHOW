@@ -49,12 +49,12 @@
 {
     
     NSMutableArray *xTitles = [NSMutableArray array];
-    if (num>6) {
+   // if (num>6) {
         for (int i=0; i<num; i++) {
-            NSString * str = [TimeToShow objectAtIndex:i];
+            NSString * str = [[TimeToShow objectAtIndex:i]substringFromIndex:10];
             [xTitles addObject:str];
         }
-    }
+    //}
    // NSLog(@"#########%d",TimeToShow.);
    /* else{
         for (int i=0; i<num; i++) {
@@ -74,7 +74,7 @@
     if (path.section==0) {
         switch (path.row) {
             case 0:
-                return [self getXTitles:20];
+                return [self getXTitles:10];
             case 1:
                 return [self getXTitles:11];
             case 2:

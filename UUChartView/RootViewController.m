@@ -8,18 +8,25 @@
 
 #import "RootViewController.h"
 #import "TableViewCell.h"
+#import "CZPickerView.h"
 
 @interface RootViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
+@property NSArray *data;
 
 @end
 
 @implementation RootViewController
+<<<<<<< Updated upstream
 int Switchligt[3]={0};
+=======
+int Switchligt;
+>>>>>>> Stashed changes
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.data=@[@"0",@"1",@"2",@"3",@"4",@"5"];
     
     
 }
@@ -51,6 +58,40 @@ int Switchligt[3]={0};
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 170;
 }
+-(NSAttributedString *)czpickerView:(CZPickerView *)pickerView
+              attributedTitleForRow:(NSInteger)row
+{
+    NSAttributedString *att=[[NSAttributedString alloc]
+                             initWithString:self.data[row]
+                                 attributes:@{
+                                                NSFontAttributeName:[UIFont fontWithName:@"Avenir_Light" size:18.0f]
+                                            }];
+    
+    return att;
+}
+
+
+
+-(NSInteger)numberOfRowsInPickerView:(CZPickerView *)pickerView{
+    return 0;
+}
+
+-(void)czpickerView:(CZPickerView *)pickerView didConfirmWithItemAtRow:(NSInteger)row{
+    NSLog(@"%@ is chosen", self.data[row]);
+    Switchligt=(int)[self.data[row] integerValue];
+}
+
+-(void)czpickerView:(CZPickerView *)pickerView didConfirmWithItemsAtRows:(NSArray *)rows{
+    for (NSNumber *n in rows) {
+        NSInteger row =[n integerValue];
+        NSLog(@"%@ is chosen!",self.data[row]);
+    }
+}
+
+-(void)czpickerViewDidClickCancelButton:(CZPickerView *)pickerView{
+    NSLog(@"Canceled.");
+}
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 30;
@@ -74,7 +115,11 @@ int Switchligt[3]={0};
 
 
 - (void)SwitchLight{
+<<<<<<< Updated upstream
      NSString *jsondata;  //添加block属性使其可以在block中被改变值
+=======
+     NSString *jsondata;
+>>>>>>> Stashed changes
     /** 获取系统时间*/
     NSString* date;
     NSString *time;
@@ -93,8 +138,13 @@ int Switchligt[3]={0};
     [request setHTTPMethod:@"POST"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+<<<<<<< Updated upstream
     [request setValue:@"0jhQbhdFSdbv5GZxcHw6Hb2gaTUA" forHTTPHeaderField:@"api-key"];
     NSString *jsonstring = [NSString stringWithFormat:@"{\"datastreams\":[{\"id\":\"control\",\"datapoints\":[{\"at\":\"%@T%@\",\"value\":%d}]}]}" ,date,time,Switchligt[1]];
+=======
+    [request setValue:@"0jhQbhdFSdbv5GZxcHw6Hb2gaTUA" forHTTPHeaderField:@"api-key"];//添加appkey
+    NSString *jsonstring = [NSString stringWithFormat:@"{\"datastreams\":[{\"id\":\"control\",\"datapoints\":[{\"at\":\"%@T%@\",\"value\":%d}]}]}" ,date,time,Switchligt];
+>>>>>>> Stashed changes
     
      [request setHTTPBody:[jsonstring dataUsingEncoding:NSUTF8StringEncoding]];
     
@@ -108,6 +158,7 @@ int Switchligt[3]={0};
 }
 
 
+<<<<<<< Updated upstream
 - (IBAction)redLight:(id)sender {
     if ([sender isOn]) {
         Switchligt[0]=1;
@@ -139,6 +190,19 @@ int Switchligt[3]={0};
 }
 - (IBAction)Refresh:(id)sender {
     
+=======
+- (IBAction)Refresh:(id)sender {
+    
+}
+
+- (IBAction)sendData:(id)sender {
+    
+    CZPickerView *picker=[[CZPickerView alloc]initWithHeaderTitle:@"请选择发送数据" cancelButtonTitle:@"取消" confirmButtonTitle:@"发送"];
+    picker.delegate=self;
+    picker.dataSource=self;
+    picker.needFooterView=NO;
+    [picker show];
+>>>>>>> Stashed changes
 }
 
 @end

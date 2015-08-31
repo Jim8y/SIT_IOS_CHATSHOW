@@ -11,6 +11,10 @@
 		2FB1D8241B91B0A200B990D4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FB1D8231B91B0A200B990D4 /* CoreGraphics.framework */; };
 		2FE0007C1B93008700050C81 /* SITChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE0007A1B93008700050C81 /* SITChatController.m */; };
 		2FE0007D1B93008700050C81 /* SITChatController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FE0007B1B93008700050C81 /* SITChatController.xib */; };
+<<<<<<< Updated upstream
+=======
+		5B6E75E51B94A9EE000CFFF1 /* CZPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E75E41B94A9EE000CFFF1 /* CZPickerView.m */; };
+>>>>>>> Stashed changes
 		5BD3C9231B91F65900BA7118 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD3C9221B91F65900BA7118 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B7A1894E1A58D9A200579497 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A1894D1A58D9A200579497 /* main.m */; };
 		B7A189511A58D9A200579497 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A189501A58D9A200579497 /* AppDelegate.m */; };
@@ -45,6 +49,12 @@
 		2FE000791B93008700050C81 /* SITChatController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SITChatController.h; path = ../SITChatController.h; sourceTree = "<group>"; };
 		2FE0007A1B93008700050C81 /* SITChatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SITChatController.m; path = ../SITChatController.m; sourceTree = "<group>"; };
 		2FE0007B1B93008700050C81 /* SITChatController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SITChatController.xib; path = ../SITChatController.xib; sourceTree = "<group>"; };
+<<<<<<< Updated upstream
+=======
+		5B6E75E21B94A9EE000CFFF1 /* CZPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZPicker.h; sourceTree = "<group>"; };
+		5B6E75E31B94A9EE000CFFF1 /* CZPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZPickerView.h; sourceTree = "<group>"; };
+		5B6E75E41B94A9EE000CFFF1 /* CZPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZPickerView.m; sourceTree = "<group>"; };
+>>>>>>> Stashed changes
 		5BD3C9211B91F65900BA7118 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		5BD3C9221B91F65900BA7118 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		B7A189481A58D9A200579497 /* UUChartView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UUChartView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +108,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B6E75E11B94A9C1000CFFF1 /* DataPicker */ = {
+			isa = PBXGroup;
+			children = (
+				5B6E75E21B94A9EE000CFFF1 /* CZPicker.h */,
+				5B6E75E31B94A9EE000CFFF1 /* CZPickerView.h */,
+				5B6E75E41B94A9EE000CFFF1 /* CZPickerView.m */,
+			);
+			name = DataPicker;
+			sourceTree = "<group>";
+		};
 		5BD3C8E91B91DE7200BA7118 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +140,7 @@
 		B7A1893F1A58D9A200579497 = {
 			isa = PBXGroup;
 			children = (
+				5B6E75E11B94A9C1000CFFF1 /* DataPicker */,
 				5BD3C9201B91F65900BA7118 /* JSONKit */,
 				5BD3C8E91B91DE7200BA7118 /* Framework */,
 				B7A189711A58DA8500579497 /* UUChart */,
@@ -214,6 +235,7 @@
 				B7A189441A58D9A200579497 /* Sources */,
 				B7A189451A58D9A200579497 /* Frameworks */,
 				B7A189461A58D9A200579497 /* Resources */,
+				5BCF28301B93593400E4AB31 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -301,6 +323,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5BCF28301B93593400E4AB31 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B7A189441A58D9A200579497 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -310,6 +348,7 @@
 				B7A189801A58DA8500579497 /* UUChart.m in Sources */,
 				2FE0007C1B93008700050C81 /* SITChatController.m in Sources */,
 				B7A189511A58D9A200579497 /* AppDelegate.m in Sources */,
+				5B6E75E51B94A9EE000CFFF1 /* CZPickerView.m in Sources */,
 				B7A1898E1A58DDBB00579497 /* TableViewCell.m in Sources */,
 				B7A189871A58DAC600579497 /* RootViewController.m in Sources */,
 				B7A189831A58DA8500579497 /* UULineChart.m in Sources */,
@@ -431,9 +470,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = UUChartView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				New_Setting = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -442,9 +483,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = UUChartView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				New_Setting = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

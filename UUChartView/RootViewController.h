@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CZPicker.h"
 
-@interface RootViewController : UIViewController
+@interface RootViewController : UIViewController<CZPickerViewDataSource,CZPickerViewDelegate>{
+    
+}
+
+- (IBAction)Refresh:(id)sender;
+- (IBAction)sendData:(id)sender;
 
 - (IBAction)Refresh:(id)sender;
 @property (weak, nonatomic) IBOutlet UISwitch *RedLight;
